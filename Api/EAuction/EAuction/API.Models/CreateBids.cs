@@ -30,4 +30,4 @@ namespace EAuction.API.Models
         public decimal BidAmount { get; set; }
     }
 }
-}
+

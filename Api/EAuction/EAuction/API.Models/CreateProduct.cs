@@ -10,6 +10,8 @@ namespace EAuction.API.Models
     public class CreateProduct
     {       
         [Required]
+        [RegularExpression(@"^.{5,}$", ErrorMessage ="Minimum 5 characters required")]
+        [StringLength(30, ErrorMessage ="Maximum 30")]
         public string ProductName { get; set; }
         [Required]
         public string ShortDescription { get; set; }
@@ -22,6 +24,6 @@ namespace EAuction.API.Models
         [Required]
         public DateTime BidEndDate { get; set; }
         [Required]
-        public CreateBids SellerDetails { get; set; }
+        public CreateSeller SellerDetails { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cGj5tKrQDttMqMa1uANnQgQ0c/e0T7gy3Qr583X8xUcjF/J+6wdc/RpDwbh/m7b9/HL6nZ7uBUI3tFcEhoHb7g==",
+  "dgSpecHash": "aEsgSBp1eKlF2pQunVC0+xOkLWTbLpTAwDL9cdNW4coHL2MWYX9pm1QMzQASVBe0a9D7qvjv1T4PzqHRr2HYcw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cogdotnet443\\source\\repos\\EAuction\\EAuction\\EAuction.csproj",
+  "projectFilePath": "C:\\Users\\cogdotnet443\\Desktop\\Git\\FSE3\\Api\\EAuction\\EAuction\\EAuction.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cogdotnet443\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\cogdotnet443\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

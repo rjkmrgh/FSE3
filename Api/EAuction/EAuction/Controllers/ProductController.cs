@@ -27,12 +27,39 @@ namespace EAuction.Controllers
                 StartingPrice = 1000,
                 BidEndDate = new DateTime(2022, 08, 01)
             }) ;
+            Products.Add(new Product()
+            {
+                ProductName = "IPod",
+                ShortDescription = "v0.0",
+                Category = Category.PAINTING,
+                LongDescription = "iPod large Model",
+                StartingPrice = 3000,
+                BidEndDate = new DateTime(2022, 09, 01)
+            });
+            Products.Add(new Product()
+            {
+                ProductName = "iPhone",
+                ShortDescription = "12",
+                Category = Category.SCULPTOR,
+                LongDescription = "iPhone 12 max Model",
+                StartingPrice = 1000,
+                BidEndDate = new DateTime(2022,  11, 01)
+            });
+            Products.Add(new Product()
+            {
+                ProductName = "iMac",
+                ShortDescription = "screen",
+                Category = Category.SCULPTOR,
+                LongDescription = "iMac TV Model",
+                StartingPrice = 32000,
+                BidEndDate = new DateTime(2022, 09, 01)
+            });
         }
 
         [HttpGet("Products")]
         public IEnumerable<Product> GetProducts()
         {
-            return Products;
+            return Products;//.Select(x => x.ProductName).ToList();
         }
 
         [HttpGet("ProductName")]

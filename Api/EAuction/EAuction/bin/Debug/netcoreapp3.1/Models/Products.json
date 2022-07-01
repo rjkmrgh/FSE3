@@ -1,0 +1,60 @@
+{
+  "Products": [
+    {
+      "ProductName": "",
+      "ShortDescription": "",
+      "LongDescription": "",
+      "Category": "Painting",
+      "StartingPrice": 100,
+      "BidEndDate": "08/01/2022",
+      "Seller": {
+        "FirstName": "",
+        "LastName": "",
+        "Address": "",
+        "City": "",
+        "State": "",
+        "Pin": "",
+        "Phone": "",
+        "Email": ""
+      },
+      "Bids": [
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "ProductId": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "ProductId": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "ProductId": "",
+          "BidAmount": 100
+        }
+      ] 
+    }
+  ]
+} 

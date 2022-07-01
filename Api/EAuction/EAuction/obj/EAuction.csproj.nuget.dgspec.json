@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cogdotnet443\\source\\repos\\EAuction\\EAuction\\EAuction.csproj": {}
+    "C:\\Users\\cogdotnet443\\Desktop\\Git\\FSE3\\Api\\EAuction\\EAuction\\EAuction.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cogdotnet443\\source\\repos\\EAuction\\EAuction\\EAuction.csproj": {
+    "C:\\Users\\cogdotnet443\\Desktop\\Git\\FSE3\\Api\\EAuction\\EAuction\\EAuction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cogdotnet443\\source\\repos\\EAuction\\EAuction\\EAuction.csproj",
+        "projectUniqueName": "C:\\Users\\cogdotnet443\\Desktop\\Git\\FSE3\\Api\\EAuction\\EAuction\\EAuction.csproj",
         "projectName": "EAuction",
-        "projectPath": "C:\\Users\\cogdotnet443\\source\\repos\\EAuction\\EAuction\\EAuction.csproj",
+        "projectPath": "C:\\Users\\cogdotnet443\\Desktop\\Git\\FSE3\\Api\\EAuction\\EAuction\\EAuction.csproj",
         "packagesPath": "C:\\Users\\cogdotnet443\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cogdotnet443\\source\\repos\\EAuction\\EAuction\\obj\\",
+        "outputPath": "C:\\Users\\cogdotnet443\\Desktop\\Git\\FSE3\\Api\\EAuction\\EAuction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
