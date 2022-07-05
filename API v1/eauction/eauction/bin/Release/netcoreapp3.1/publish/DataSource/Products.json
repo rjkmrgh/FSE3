@@ -1,0 +1,104 @@
+{
+  "ProductDetails": [
+    {
+      "ProductId": 1,
+      "ProductName": "Product A",
+      "ShortDescription": "Prod A",
+      "LongDescription": "Product A - Home  Appliance",
+      "Category": "Painting",
+      "StartingPrice": 1000,
+      "BidEndDate": "08/01/2022",
+      "SellerDetails": {
+        "SellerId": 1,
+        "FirstName": "Kia",
+        "LastName": "John",
+        "Address": "14, 3rd Block",
+        "City": "NA",
+        "State": "TX",
+        "Pin": "123",
+        "Phone": "1234567890",
+        "Email": "SellerA@mail.com"
+      }
+    },
+    {
+      "ProductId": 2,
+      "ProductName": "Product B",
+      "ShortDescription": "Prod B",
+      "LongDescription": "Product B - Home  Decorator",
+      "Category": "Ornament",
+      "StartingPrice": 5000,
+      "BidEndDate": "09/01/2022",
+      "SellerDetails": {
+        "SellerId": 2,
+        "FirstName": "Salle",
+        "LastName": "Ron",
+        "Address": "10th Avenue",
+        "City": "Olle",
+        "State": "PA",
+        "Pin": "9875",
+        "Phone": "78945612090",
+        "Email": "SellerB@mail.com"
+      }
+    },
+    {
+      "ProductId": 3,
+      "ProductName": "Product C",
+      "ShortDescription": "Prod C",
+      "LongDescription": "Product C - Home  Decorator",
+      "Category": "Sculptor",
+      "StartingPrice": 3000,
+      "BidEndDate": "09/21/2022",
+      "SellerDetails": {
+        "SellerId": 3,
+        "FirstName": "Oai",
+        "LastName": "Mart",
+        "Address": "back street",
+        "City": "Park",
+        "State": "OU",
+        "Pin": "5487",
+        "Phone": "6547891230",
+        "Email": "SellerC@mail.com"
+      }
+    },
+      {
+        "ProductId": 4,
+        "ProductName": "Product DX",
+        "ShortDescription": "Prod DX",
+        "LongDescription": "Product DX - Office Moderator",
+        "Category": "Sculptor",
+        "StartingPrice": 1500,
+        "BidEndDate": "11/2/2022",
+        "SellerDetails": {
+          "SellerId": 3,
+          "FirstName": "Oai",
+          "LastName": "Mart",
+          "Address": "back street",
+          "City": "Park",
+          "State": "OU",
+          "Pin": "5487",
+          "Phone": "6547891230",
+          "Email": "SellerC@mail.com"
+        }
+      },
+      {
+        "ProductId": 5,
+        "ProductName": "Product YO",
+        "ShortDescription": "Prod YO",
+        "LongDescription": "Product YO - Office Accessories",
+        "Category": "Painting",
+        "StartingPrice": 3600,
+        "BidEndDate": "10/01/2022",
+        "SellerDetails": {
+          "SellerId": 2,
+          "FirstName": "Salle",
+          "LastName": "Ron",
+          "Address": "10th Avenue",
+          "City": "Olle",
+          "State": "PA",
+          "Pin": "9875",
+          "Phone": "78945612090",
+          "Email": "SellerB@mail.com"
+        }
+      }
+  ]
+} 

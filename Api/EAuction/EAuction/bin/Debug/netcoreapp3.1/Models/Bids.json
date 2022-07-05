@@ -1,0 +1,118 @@
+{
+  "ProdBids": [
+    {
+      "ProductId": 1,
+      "BuyerDetails": [
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        }
+      ]
+    },
+    {
+      "ProductId": 2,
+      "BuyerDetails": [
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        }
+      ]
+    },
+    {
+      "ProductId": 3,
+      "BuyerDetails": [
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        },
+        {
+          "FirstName": "",
+          "LastName": "",
+          "Address": "",
+          "City": "",
+          "State": "",
+          "Pin": "",
+          "Phone": "",
+          "Email": "",
+          "BidAmount": 100
+        }
+      ]
+    }
+  ]
+} 

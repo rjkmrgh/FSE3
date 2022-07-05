@@ -24,7 +24,6 @@ C:\Users\cogdotnet443\source\repos\EAuction\EAuction\bin\Debug\netcoreapp3.1\Swa
 C:\Users\cogdotnet443\source\repos\EAuction\EAuction\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\cogdotnet443\source\repos\EAuction\EAuction\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\cogdotnet443\source\repos\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.csproj.AssemblyReference.cache
 C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.AssemblyInfoInputs.cache
 C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.AssemblyInfo.cs
@@ -51,3 +50,6 @@ C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreap
 C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\scopedcss\bundle\EAuction.styles.css
 C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.RazorTargetAssemblyInfo.cache
 C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.genruntimeconfig.cache
+C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\bin\Debug\netcoreapp3.1\Models\Bids.json
+C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\cogdotnet443\Desktop\Git\FSE3\Api\EAuction\EAuction\obj\Debug\netcoreapp3.1\EAuction.csproj.AssemblyReference.cache
