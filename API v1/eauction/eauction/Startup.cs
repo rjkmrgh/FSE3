@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime;
+using AspNetCoreRateLimit;
+using eauction.Handler;
 using eauction.Services.Buyer;
 using eauction.Services.Seller;
 using Microsoft.AspNetCore.Builder;
@@ -44,13 +46,40 @@ namespace eauction
                                             .AllowAnyMethod();
                     });
             });
+
+            services.AddMemoryCache();
+            services.Configure<IpRateLimitOptions>(options =>
+            {
+                options.EnableEndpointRateLimiting = true;
+                options.StackBlockedRequests = false;
+                options.HttpStatusCode = 429;
+                options.RealIpHeader = "X-Real-IP";
+                options.ClientIdHeader = "X-ClientId";
+                options.GeneralRules = new List<RateLimitRule>
+                {
+                    new RateLimitRule
+                    {
+                        Endpoint = "*",
+                        Period = "10s",
+                        Limit = 5,
+                    }
+                };
+            });
+            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+            services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
+            services.AddInMemoryRateLimiting();
+
             services.AddTransient<ISellerService, SellerService>();
             services.AddTransient<IBuyerService, BuyerService>();
-
-            var credentials = new BasicAWSCredentials("AKIA6NHY46N6WJXLWTJW", "/lHFhfOHymTlIeOt9FjeGeBE4aOqEG6P4q3mlqUF");
+            services.AddTransient<ExceptionHandlerMiddleware>();
+            var credentials = new BasicAWSCredentials("AKIAX27FMRA3XXPEAAD2","swZNdUtY9qA3N6nBF0B2DRWgINBW616kSdUTAh0q");
+            //var credentials = new BasicAWSCredentials("AKIA6NHY46N6WJXLWTJW", "/lHFhfOHymTlIeOt9FjeGeBE4aOqEG6P4q3mlqUF");
             var config = new AmazonDynamoDBConfig()
             {
-                RegionEndpoint = Amazon.RegionEndpoint.USEast2
+                //RegionEndpoint = Amazon.RegionEndpoint.USEast2
+                RegionEndpoint = Amazon.RegionEndpoint.APSouth1
             };
             var client = new AmazonDynamoDBClient(credentials, config);
             services.AddSingleton<IAmazonDynamoDB>(client);
@@ -76,7 +105,8 @@ namespace eauction
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
+            app.UseIpRateLimiting();
             app.UseAuthorization();
 
             app.UseSwagger();

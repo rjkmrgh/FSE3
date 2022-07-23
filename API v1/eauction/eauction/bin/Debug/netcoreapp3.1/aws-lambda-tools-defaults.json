@@ -13,6 +13,6 @@
     "s3-prefix"     : "eauction/",
     "template"      : "serverless.template",
     "template-parameters" : "",
-    "s3-bucket"           : "deploybucket-cf",
+    "s3-bucket"           : "cffse3deploy12",
     "stack-name"          : "cf-fse3-deploy"
 }

@@ -33,7 +33,7 @@ namespace eauction.Controllers
         public IActionResult GetDBProducts()
         {
             var resp = _sellerService.GetDBAvailableProducts();
-            resp.Wait();
+            //resp.Wait();
             return Ok(resp.Result);
         }
 
@@ -49,13 +49,13 @@ namespace eauction.Controllers
         public IActionResult AddProduct([FromBody]CreateProduct product)
         {
             var result = _sellerService.ValidateProductRequest(product);
-            if (result == "valid")
+            if (result.Item2)
             {
                 var resp = _sellerService.AddProduct(product);
                 resp.Wait();
                 return Ok(resp.Result);
             }
-            return BadRequest(result);
+            return BadRequest(result.Item1);
         }
 
         [HttpDelete("delete")]

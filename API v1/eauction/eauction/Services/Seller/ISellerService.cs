@@ -15,8 +15,6 @@ namespace eauction.Services.Seller
 
         Task<string> DeleteProduct(string productid);
 
-        List<AvailableProducts> GetProducts();
-
         Task<List<AvailableProducts>> GetDBAvailableProducts();
 
         Task<List<Product>> GetDBProductDetails(string productid);
@@ -25,6 +23,6 @@ namespace eauction.Services.Seller
 
         ProductBidsDetails GetProductBidsDetails(string productid);
 
-        string ValidateProductRequest(CreateProduct product);
+        Tuple<string, bool> ValidateProductRequest(CreateProduct product);
     }
 }

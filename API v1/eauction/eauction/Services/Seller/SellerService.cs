@@ -1,5 +1,6 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+using eauction.Builder;
 using eauction.DataSource;
 using eauction.Models;
 using eauction.Models.Dynamo;
@@ -25,25 +26,27 @@ namespace eauction.Services.Seller
             _dynamoDBContext = dynamoDBContext;
         }
 
-        public string ValidateProductRequest(CreateProduct product)
+        public Tuple<string, bool> ValidateProductRequest(CreateProduct product)
         {
-            string sellerRowId = "Seller_" + generateRowId();
-
+            string msg = "";
+            bool isValid = true;
             if (product.BidEndDate < DateTime.Today)
             {
-                return  "BidEndDate should be future date.";
+                isValid = false;
+                msg ="BidEndDate should be future date.";
             }
-            if (!Enum.IsDefined(typeof(Category), product.Category.ToUpper()))
+            else if (!Enum.IsDefined(typeof(Category), product.Category.ToUpper()))
             {
-                return  "Invalid Category...";
+                isValid = false;
+                msg = "Invalid Category...";
             }
-            return "valid";
+            return Tuple.Create(msg, isValid);
         }
         public async Task<Product> AddProduct(CreateProduct product)
         {
             string sellerRowId =  "Seller_" + generateRowId();
          
-            SellerInfo s = new SellerInfo() { 
+            SellerInfo seller = new SellerInfo() { 
                 Email = product.SellerDetails.Email,
                 Phone = product.SellerDetails.Phone,
                 FirstName = product.SellerDetails.FirstName,
@@ -55,10 +58,18 @@ namespace eauction.Services.Seller
                 SellerId = sellerRowId
             };
 
-            await _dynamoDBContext.SaveAsync(s);
+            try
+            {
+                await _dynamoDBContext.SaveAsync(seller);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
 
             string prodRowId = "Prod_" + generateRowId();
-            Product p = new Product()
+            Product prod = new Product()
             {
                 ProductId = prodRowId,
                 ProductName = product.ProductName,
@@ -68,23 +79,55 @@ namespace eauction.Services.Seller
                 StartingPrice = product.StartingPrice,
                 BidEndDate = product.BidEndDate
             };
-            await _dynamoDBContext.SaveAsync(p);
+
+            try
+            {
+                await _dynamoDBContext.SaveAsync(prod);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             
-            return p;
+            return prod;
         }
 
         public async Task<string> DeleteProduct(string productid)
         {
             DateTime bidDate = DateTime.Today;
             var pTask = GetDBProductDetails(productid);
-            
+            bool bidsAvail = false;
+            string productName = "";
             foreach (var item in pTask.Result)
             {
                 bidDate = item.BidEndDate;
+                productName = item.ProductName;
             }
             if (bidDate > DateTime.Today)
             {
-                await _dynamoDBContext.DeleteAsync<Product>(productid);
+                var pbTask = GetDBProductBidsDetails(productid);
+
+                foreach (var item in pbTask.Result)
+                {
+                    bidsAvail = true;
+                }
+                if(!bidsAvail)
+                {
+                    try
+                    {
+                        await _dynamoDBContext.DeleteAsync<Product>(productid, productName);
+                    }
+                    catch (Exception e)
+                    {
+
+                        throw e;
+                    }
+                }
+                else
+                {
+                    return "Unabled to delete... Bids are there..!";
+                }
             }
             else
             {
@@ -100,27 +143,27 @@ namespace eauction.Services.Seller
 
         public List<AvailableProducts> GetProducts()
         {
-            List<AvailableProducts> response = new List<AvailableProducts>();
+            //List<AvailableProducts> response = new List<AvailableProducts>();
             
-            try
-            {
-                var resp = TestData.GetProducuts();
-                foreach (var item in resp)
-                {
-                    response.Add(new AvailableProducts()
-                    {
-                        ProductId = item.ProductId,
-                        ProductName = item.ProductName
-                    });
-                }
+            //try
+            //{
+            //    var resp = TestData.GetProducuts();
+            //    foreach (var item in resp)
+            //    {
+            //        response.Add(new AvailableProducts()
+            //        {
+            //            ProductId = item.ProductId,
+            //            ProductName = item.ProductName
+            //        });
+            //    }
                 
-            }
-            catch (Exception e)
-            {
+            //}
+            //catch (Exception e)
+            //{
 
-                throw ;
-            }
-            return response;
+            //    throw ;
+            //}
+            return null;
         }
 
         /// <summary>
@@ -130,7 +173,7 @@ namespace eauction.Services.Seller
         public async Task<List<AvailableProducts>> GetDBAvailableProducts()
         {
             List<AvailableProducts> response = new List<AvailableProducts>();
-
+            
             try
             {
                 var conditions = new List<ScanCondition>();
@@ -146,7 +189,7 @@ namespace eauction.Services.Seller
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
             return response;
         }
@@ -175,13 +218,14 @@ namespace eauction.Services.Seller
 
             foreach (var item in pbTask.Result)
             {
-                pb.BidsDetails.Add(new Bids()
-                {
-                    FirstName = item.FirstName,
-                    BidAmount = item.BidAmount,
-                    Email = item.Email,
-                    Phone = item.Phone
-                });                 
+                var bid = new BidBuilder()
+                          .WithName(item.FirstName)
+                          .WithPhone(item.Phone)
+                          .WithEmail(item.Email)
+                          .WithAmount(item.BidAmount)
+                          .Build();
+
+                pb.BidsDetails.Add(bid);                 
             }
 
             return pb;
@@ -203,7 +247,7 @@ namespace eauction.Services.Seller
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
             return response;
         }
@@ -225,7 +269,7 @@ namespace eauction.Services.Seller
             }
             catch (Exception e)
             {
-                throw;
+                throw e;
             }
             return response;
         }

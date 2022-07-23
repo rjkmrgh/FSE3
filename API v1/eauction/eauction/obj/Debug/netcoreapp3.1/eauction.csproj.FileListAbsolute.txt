@@ -37,3 +37,9 @@ C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\obj\Debug\netcor
 C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\obj\Debug\netcoreapp3.1\eauction.csproj.AssemblyReference.cache
+C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\AspNetCoreRateLimit.dll
+C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\cogdotnet443\Desktop\Git\FSE3\API v1\eauction\eauction\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
